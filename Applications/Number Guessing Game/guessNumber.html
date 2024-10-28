@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game - By VkT Coder</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1{
+            color: #2c3e50;
+        }
+
+        p{
+            font-size: 18px;
+        }
+
+        input[type="text"]{
+            padding: 10px;
+            width: 200px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button{
+            padding: 10px 20px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background: #2980b9;
+        }
+
+        #message{
+            font-size: 20px;
+            color: #e74c3c;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design Starts from here */
+
+        @media only screen and (max-width: 600px){
+            body{
+                padding: 20px;
+            }
+
+            input[type="text"]{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            button{
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Number Guessing Game</h1>
+    <p>Guess a Number between 1 and 100:</p>
+    <input type="text" id="guess" placeholder="Enter your guess:">
+    <br> <br>
+
+    <button onclick="checkGuess()">Submit Guess</button>
+    <p id="message"></p>
+
+    <script>
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess(){
+            let guess = document.getElementById("guess").value;
+            if(guess < 1 || guess > 100){
+                alert("Please enter a number between 1 and 100.");
+                return;
+            }
+
+            attempts++;
+
+            if(guess == randomNumber){
+                document.getElementById("message").innerText = "Congratulations! You guessed the number in " + attempts + " attempts.";
+                document.getElementById("message").style.color = "#2ecc71"; // Success color green;
+            }
+            else if(guess < randomNumber){
+                document.getElementById("message").innerText = "Too low! Try again.";
+                document.getElementById("message").style.color = "#e74c3c"; // message in red;
+            }
+            else{
+                document.getElementById("message").innerText = "Too high! Try again.";
+                document.getElementById("message").style.color = "#e74c3c";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
