@@ -8,22 +8,22 @@
         body{
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
             background-color: black;
-            width: 100vw;
+            width: 100vmin;
             height: 100vmin;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         button{
             width: 15%;
-            padding: 10px 10px;
+            padding: 10px;
             border: none;
             outline: none;
-            /* border-radius: 4px; */
-            background: #00e1ff;
+            background-color: #00e1ff;
             /* color: #fff; */
             font-weight: bold;
             cursor: pointer;
@@ -34,13 +34,16 @@
         button:hover{
             /* text-shadow: 0 0 12px rgb(0, 0, 0); */
             /* -webkit-box-reflect: below 12px linear-gradient(transparent, #fff); */
-            font-size: 1.2em;
-            box-shadow: 0 0 5px #00e1ff, 0 0 15px #00e1ff, 0 0  25px #00e1ff, 0 0 100px #00e1ff;
+            font-size: 1.1em;
+            box-shadow: 0 0 5px #00e1ff,
+                        0 0 15px #00e1ff,
+                        0 0 25px #00e1ff,
+                        0 0 100px #00e1ff;
             transition: all 0.4s;
         }
     </style>
 </head>
 <body>
-    <button class="btn">Click Here</button>
+    <button class="btn">Button</button>
 </body>
 </html>
